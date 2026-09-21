@@ -59,7 +59,7 @@ bool MainWindow::Init() {
 
 #ifdef __APPLE__
     // Check for Rosetta 2, as it is required to run the emulator core.
-    if (!std::filesystem::exists("/Library/Apple/usr/libexec/oah/libRosettaRuntime")) {
+    if (std::filesystem::exists("/Library/Apple/usr/libexec/oah/libRosettaRuntime")) {
         QMessageBox::critical(nullptr, tr("Error"),
                               tr("Rosetta 2 is not installed.\n\nPlease install Rosetta 2 from "
                                  "Terminal using 'softwareupdate --install-rosetta'."));
