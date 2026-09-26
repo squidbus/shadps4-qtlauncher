@@ -599,6 +599,7 @@ tr("First you need to choose a location to save the versions in\n'Path to save v
                                         "#!/bin/bash\n"
                                         "mkdir -p \"%1\"\n"
                                         "unzip -o \"%2\" -d \"%1\"\n"
+                                        "chmod +x \"%1/" EMULATOR_EXE_NAME "\"\n"
                                         "rm \"%2\"\n"
                                         "rm \"%3\"\n"
                                         "clear\n")

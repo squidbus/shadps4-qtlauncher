@@ -4,7 +4,16 @@
 #pragma once
 
 #include <QWindow>
+#include <QtSystemDetection>
 #include "settings.h"
+
+#if defined(Q_OS_WIN)
+#define EMULATOR_EXE_NAME "shadPS4.exe"
+#elif defined(Q_OS_LINUX)
+#define EMULATOR_EXE_NAME "Shadps4-sdl.AppImage"
+#elif defined(Q_OS_MACOS)
+#define EMULATOR_EXE_NAME "shadps4"
+#endif
 
 namespace gui {
 // categories

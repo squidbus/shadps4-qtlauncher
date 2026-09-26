@@ -14,16 +14,7 @@ QString gui_settings::GetVersionExecutablePath(const QString& versionName) const
         Common::FS::PathFromQString(GetValue(gui::vm_versionPath).toString());
     const auto versionFolder = versionsFolder / Common::FS::PathFromQString(versionName);
 
-    std::string exeName;
-#ifdef Q_OS_WIN
-    exeName = "shadPS4.exe";
-#elif defined(Q_OS_LINUX)
-    exeName = "Shadps4-sdl.AppImage";
-#elif defined(Q_OS_MACOS)
-    exeName = "shadps4";
-#endif
-
     QString result;
-    Common::FS::PathToQString(result, versionFolder / exeName);
+    Common::FS::PathToQString(result, versionFolder / EMULATOR_EXE_NAME);
     return result;
 }
